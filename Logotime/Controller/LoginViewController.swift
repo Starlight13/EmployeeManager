@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class LoginViewController: WelcomeViewController {
     
@@ -29,29 +30,15 @@ class LoginViewController: WelcomeViewController {
     
     @IBAction func loginPressed(_ sender: UIButton) {
         if isValidEmail(emailTextField.text!) {
-            let url = URL(string: K.baseURL)!
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            let parameters: [String: Any] = [
-                "email": emailTextField.text!,
-                "password": passwordTextField.text!
-            ]
-            do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-            } catch let error {
-                print(error.localizedDescription)
-                return
+            let requestURL = "\(K.baseURL)\(K.Endpoints.userRequest)/login"
+            let loginRequestParameters = LoginModel(email: emailTextField.text!, password: passwordTextField.text!)
+            AF.request(requestURL, method: .post, parameters: loginRequestParameters, encoder: JSONParameterEncoder.default).validate().response {response in
+                //TODO: Validate Response
+                debugPrint(response)
+                self.performSegue(withIdentifier: K.Segues.loginToMain, sender: self)
             }
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                if let e = error {
-                    print(e)
-                } else {
-                    print(String(data: data!, encoding: .utf8))
-                }
-            }
-            
-            task.resume()
+        } else {
+            print("Invalid email")
         }
     }
 }

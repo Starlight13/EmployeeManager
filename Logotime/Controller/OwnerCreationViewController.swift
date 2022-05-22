@@ -45,7 +45,7 @@ class OwnerCreationViewController: UIViewController {
            !passwordTextField.text!.isEmpty &&
            !firstNameTextField.text!.isEmpty &&
            !lastNameTextFIeld.text!.isEmpty {
-             owner = OwnerCreationModel(email: emailTextField.text!, phoneNumeber: phoneNumberTextField.text!, password: passwordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextFIeld.text!)
+             owner = OwnerCreationModel(email: emailTextField.text!, phoneNumber: phoneNumberTextField.text!, password: passwordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextFIeld.text!)
             performSegue(withIdentifier: K.Segues.userCreationToOrganisationCreation, sender: self)
         }
     }

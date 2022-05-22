@@ -9,7 +9,7 @@ import Foundation
 
 struct OwnerCreationModel: Encodable {
     var email: String
-    var phoneNumeber: String
+    var phoneNumber: String
     var password: String
     var firstName: String
     var lastName: String

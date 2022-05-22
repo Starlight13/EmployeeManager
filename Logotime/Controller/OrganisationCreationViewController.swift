@@ -40,16 +40,7 @@ class OrganisationCreationViewController: UIViewController {
     }
     
     @IBAction func sizeChosen(_ sender: UIButton) {
-        sizeRadioButtonsController.selectedButton = sender
-        for button in sizeRadioButtonsController.buttonsArray {
-            if button == sender {
-                button.backgroundColor = .white
-                button.isSelected = true
-            } else if button.isSelected {
-                button.backgroundColor = UIColor(named: K.Colors.secondaryColor)
-                button.isSelected = false
-            }
-        }
+        sizeRadioButtonsController.selectButton(buttonSelected: sender)
     }
     
     

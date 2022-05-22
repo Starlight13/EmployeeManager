@@ -13,14 +13,15 @@ class RadioButtonController: NSObject {
     var selectedButton: UIButton?
 
     func selectButton(buttonSelected: UIButton) {
-        for b in buttonsArray {
-            if b == buttonSelected {
-                selectedButton = b
-                b.isSelected = true
-                b.backgroundColor = UIColor(named: K.Colors.primaryColor)
-            } else {
-                b.isSelected = false
-                b.backgroundColor = UIColor(named: K.Colors.secondaryColor)
+        self.selectedButton = buttonSelected
+        for button in self.buttonsArray {
+            if button == buttonSelected {
+                button.layer.borderColor = CGColor(red: 256, green: 256, blue: 256, alpha: 1)
+                button.layer.borderWidth = 4
+                button.isSelected = true
+            } else if button.isSelected {
+                button.layer.borderWidth = 0
+                button.isSelected = false
             }
         }
     }

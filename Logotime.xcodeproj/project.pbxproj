@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45C3CE6EB76B8008F4038363 /* Pods_Logotime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3191B4C53C0CF85E0BBA07 /* Pods_Logotime.framework */; };
 		795281E02835922C0068C810 /* OrganisationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281DF2835922C0068C810 /* OrganisationSize.swift */; };
 		795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281E12835935C0068C810 /* RuleCreationViewController.swift */; };
 		797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797648D32832623400E1847F /* OwnerCreationModel.swift */; };
 		797648D62832637500E1847F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797648D52832637500E1847F /* Constants.swift */; };
+		79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */; };
+		79B3AA5128398EA7002D9022 /* OrganisationRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */; };
+		79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA52283AD6F2002D9022 /* LoginModel.swift */; };
 		79CCCFA62829902B00C44D41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA52829902B00C44D41 /* AppDelegate.swift */; };
 		79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA72829902B00C44D41 /* SceneDelegate.swift */; };
 		79CCCFAA2829902B00C44D41 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA92829902B00C44D41 /* WelcomeViewController.swift */; };
@@ -24,10 +28,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3E80A9942F433FCBE01C86 /* Pods-Logotime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logotime.release.xcconfig"; path = "Target Support Files/Pods-Logotime/Pods-Logotime.release.xcconfig"; sourceTree = "<group>"; };
+		5D7D6C52548C474A16CE0349 /* Pods-Logotime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logotime.debug.xcconfig"; path = "Target Support Files/Pods-Logotime/Pods-Logotime.debug.xcconfig"; sourceTree = "<group>"; };
 		795281DF2835922C0068C810 /* OrganisationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationSize.swift; sourceTree = "<group>"; };
 		795281E12835935C0068C810 /* RuleCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationViewController.swift; sourceTree = "<group>"; };
 		797648D32832623400E1847F /* OwnerCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCreationModel.swift; sourceTree = "<group>"; };
 		797648D52832637500E1847F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Logotime/Constants.swift; sourceTree = "<group>"; };
+		79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationModel.swift; sourceTree = "<group>"; };
+		79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationRegistrationModel.swift; sourceTree = "<group>"; };
+		79B3AA52283AD6F2002D9022 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		79CCCFA22829902A00C44D41 /* Logotime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logotime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CCCFA52829902B00C44D41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CCCFA72829902B00C44D41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +49,7 @@
 		79DE15CE28340B7400342C02 /* OwnerCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCreationViewController.swift; sourceTree = "<group>"; };
 		79DE15D028341BAB00342C02 /* OrganisationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationCreationViewController.swift; sourceTree = "<group>"; };
 		79DE15D228343E5700342C02 /* RadioButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonsController.swift; sourceTree = "<group>"; };
+		AB3191B4C53C0CF85E0BBA07 /* Pods_Logotime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logotime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,18 +57,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C3CE6EB76B8008F4038363 /* Pods_Logotime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0007DF428EBCEE1B8EB83A99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D7D6C52548C474A16CE0349 /* Pods-Logotime.debug.xcconfig */,
+				0F3E80A9942F433FCBE01C86 /* Pods-Logotime.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		79CCCF992829902A00C44D41 = {
 			isa = PBXGroup;
 			children = (
 				797648D52832637500E1847F /* Constants.swift */,
 				79CCCFA42829902A00C44D41 /* Logotime */,
 				79CCCFA32829902A00C44D41 /* Products */,
+				0007DF428EBCEE1B8EB83A99 /* Pods */,
+				CA5C18DEEC7282B76CE07DE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +112,9 @@
 			children = (
 				797648D32832623400E1847F /* OwnerCreationModel.swift */,
 				795281DF2835922C0068C810 /* OrganisationSize.swift */,
+				79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */,
+				79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */,
+				79B3AA52283AD6F2002D9022 /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +140,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		CA5C18DEEC7282B76CE07DE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB3191B4C53C0CF85E0BBA07 /* Pods_Logotime.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79CCCFB62829902C00C44D41 /* Build configuration list for PBXNativeTarget "Logotime" */;
 			buildPhases = (
+				C95B2B955C4D7FBC976634CA /* [CP] Check Pods Manifest.lock */,
 				79CCCF9E2829902A00C44D41 /* Sources */,
 				79CCCF9F2829902A00C44D41 /* Frameworks */,
 				79CCCFA02829902A00C44D41 /* Resources */,
+				CAE339EA078335624F46456A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,19 +216,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C95B2B955C4D7FBC976634CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Logotime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAE339EA078335624F46456A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Logotime/Pods-Logotime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Logotime/Pods-Logotime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Logotime/Pods-Logotime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		79CCCF9E2829902A00C44D41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				79DE15D328343E5700342C02 /* RadioButtonsController.swift in Sources */,
+				79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */,
 				79CCCFBD28299EC800C44D41 /* LoginViewController.swift in Sources */,
+				79B3AA5128398EA7002D9022 /* OrganisationRegistrationModel.swift in Sources */,
 				79CCCFAA2829902B00C44D41 /* WelcomeViewController.swift in Sources */,
 				79CCCFA62829902B00C44D41 /* AppDelegate.swift in Sources */,
 				795281E02835922C0068C810 /* OrganisationSize.swift in Sources */,
 				795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */,
 				79DE15CF28340B7400342C02 /* OwnerCreationViewController.swift in Sources */,
 				797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */,
+				79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */,
 				79DE15D128341BAB00342C02 /* OrganisationCreationViewController.swift in Sources */,
 				79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */,
 				797648D62832637500E1847F /* Constants.swift in Sources */,
@@ -340,6 +420,7 @@
 		};
 		79CCCFB72829902C00C44D41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D7D6C52548C474A16CE0349 /* Pods-Logotime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -368,6 +449,7 @@
 		};
 		79CCCFB82829902C00C44D41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F3E80A9942F433FCBE01C86 /* Pods-Logotime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

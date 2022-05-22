@@ -8,13 +8,16 @@
 import Foundation
 
 struct K {
-    static var baseURL = ""
+    static var baseURL = "http://localhost:8080"
     struct Endpoints {
-        
+        static let organisationRequest = "/organization"
+        static let userRequest = "/user"
     }
     struct Segues {
         static let userCreationToOrganisationCreation = "userToOrganisationRegistration"
         static let organisationCreationToRuleCreation = "organisationToRuleRegistration"
+        static let registrationToCreationToMain = "registrationToMain"
+        static let loginToMain = "loginToMain"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"
