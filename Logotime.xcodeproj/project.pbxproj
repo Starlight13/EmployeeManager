@@ -10,6 +10,13 @@
 		45C3CE6EB76B8008F4038363 /* Pods_Logotime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3191B4C53C0CF85E0BBA07 /* Pods_Logotime.framework */; };
 		795281E02835922C0068C810 /* OrganisationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281DF2835922C0068C810 /* OrganisationSize.swift */; };
 		795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281E12835935C0068C810 /* RuleCreationViewController.swift */; };
+		7968059A2845631B00BAD979 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805992845631B00BAD979 /* TokenModel.swift */; };
+		7968059C2845647900BAD979 /* TokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968059B2845647900BAD979 /* TokenResponseModel.swift */; };
+		7968059F2845687A00BAD979 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968059E2845687A00BAD979 /* EmailValidation.swift */; };
+		796805A328456EF200BAD979 /* ShiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805A228456EF200BAD979 /* ShiftsViewController.swift */; };
+		796805A52845800200BAD979 /* OrganisationUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805A42845800200BAD979 /* OrganisationUsersTableViewController.swift */; };
+		796805B02845812E00BAD979 /* OrganisationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805AF2845812E00BAD979 /* OrganisationUser.swift */; };
+		796805B42845822000BAD979 /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805B32845822000BAD979 /* UserRole.swift */; };
 		797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797648D32832623400E1847F /* OwnerCreationModel.swift */; };
 		797648D62832637500E1847F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797648D52832637500E1847F /* Constants.swift */; };
 		79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */; };
@@ -32,6 +39,13 @@
 		5D7D6C52548C474A16CE0349 /* Pods-Logotime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logotime.debug.xcconfig"; path = "Target Support Files/Pods-Logotime/Pods-Logotime.debug.xcconfig"; sourceTree = "<group>"; };
 		795281DF2835922C0068C810 /* OrganisationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationSize.swift; sourceTree = "<group>"; };
 		795281E12835935C0068C810 /* RuleCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationViewController.swift; sourceTree = "<group>"; };
+		796805992845631B00BAD979 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		7968059B2845647900BAD979 /* TokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseModel.swift; sourceTree = "<group>"; };
+		7968059E2845687A00BAD979 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		796805A228456EF200BAD979 /* ShiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsViewController.swift; sourceTree = "<group>"; };
+		796805A42845800200BAD979 /* OrganisationUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationUsersTableViewController.swift; sourceTree = "<group>"; };
+		796805AF2845812E00BAD979 /* OrganisationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationUser.swift; sourceTree = "<group>"; };
+		796805B32845822000BAD979 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		797648D32832623400E1847F /* OwnerCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCreationModel.swift; sourceTree = "<group>"; };
 		797648D52832637500E1847F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Logotime/Constants.swift; sourceTree = "<group>"; };
 		79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationModel.swift; sourceTree = "<group>"; };
@@ -73,6 +87,112 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7968059D2845686900BAD979 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				7968059E2845687A00BAD979 /* EmailValidation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		796805A62845801200BAD979 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				796805A82845802700BAD979 /* Login */,
+				796805A72845801D00BAD979 /* Registration */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		796805A72845801D00BAD979 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				796805AB2845805900BAD979 /* Controller */,
+				796805AA2845805200BAD979 /* View */,
+				796805A92845804D00BAD979 /* Model */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		796805A82845802700BAD979 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				796805AE2845808700BAD979 /* Controller */,
+				796805AD2845807A00BAD979 /* Model */,
+				796805AC2845806500BAD979 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		796805A92845804D00BAD979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				797648D32832623400E1847F /* OwnerCreationModel.swift */,
+				795281DF2835922C0068C810 /* OrganisationSize.swift */,
+				79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */,
+				79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		796805AA2845805200BAD979 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		796805AB2845805900BAD979 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79DE15CE28340B7400342C02 /* OwnerCreationViewController.swift */,
+				79DE15D028341BAB00342C02 /* OrganisationCreationViewController.swift */,
+				795281E12835935C0068C810 /* RuleCreationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		796805AC2845806500BAD979 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		796805AD2845807A00BAD979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79B3AA52283AD6F2002D9022 /* LoginModel.swift */,
+				796805992845631B00BAD979 /* TokenModel.swift */,
+				7968059B2845647900BAD979 /* TokenResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		796805AE2845808700BAD979 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79CCCFBC28299EC800C44D41 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		796805B12845820B00BAD979 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				796805B22845821100BAD979 /* Model */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		796805B22845821100BAD979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				796805B32845822000BAD979 /* UserRole.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		79CCCF992829902A00C44D41 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +215,9 @@
 		79CCCFA42829902A00C44D41 /* Logotime */ = {
 			isa = PBXGroup;
 			children = (
+				796805B12845820B00BAD979 /* User */,
+				796805A62845801200BAD979 /* Authorization */,
+				7968059D2845686900BAD979 /* Validation */,
 				79CCCFBB28299E6800C44D41 /* Controller */,
 				79CCCFBA28299E6300C44D41 /* View */,
 				79CCCFB928299E5A00C44D41 /* Model */,
@@ -110,11 +233,7 @@
 		79CCCFB928299E5A00C44D41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				797648D32832623400E1847F /* OwnerCreationModel.swift */,
-				795281DF2835922C0068C810 /* OrganisationSize.swift */,
-				79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */,
-				79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */,
-				79B3AA52283AD6F2002D9022 /* LoginModel.swift */,
+				796805AF2845812E00BAD979 /* OrganisationUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,11 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				79CCCFA92829902B00C44D41 /* WelcomeViewController.swift */,
-				79CCCFBC28299EC800C44D41 /* LoginViewController.swift */,
-				79DE15CE28340B7400342C02 /* OwnerCreationViewController.swift */,
-				79DE15D028341BAB00342C02 /* OrganisationCreationViewController.swift */,
 				79DE15D228343E5700342C02 /* RadioButtonsController.swift */,
-				795281E12835935C0068C810 /* RuleCreationViewController.swift */,
+				796805A228456EF200BAD979 /* ShiftsViewController.swift */,
+				796805A42845800200BAD979 /* OrganisationUsersTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,15 +384,22 @@
 				79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */,
 				79CCCFBD28299EC800C44D41 /* LoginViewController.swift in Sources */,
 				79B3AA5128398EA7002D9022 /* OrganisationRegistrationModel.swift in Sources */,
+				7968059C2845647900BAD979 /* TokenResponseModel.swift in Sources */,
 				79CCCFAA2829902B00C44D41 /* WelcomeViewController.swift in Sources */,
 				79CCCFA62829902B00C44D41 /* AppDelegate.swift in Sources */,
 				795281E02835922C0068C810 /* OrganisationSize.swift in Sources */,
 				795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */,
 				79DE15CF28340B7400342C02 /* OwnerCreationViewController.swift in Sources */,
+				796805B02845812E00BAD979 /* OrganisationUser.swift in Sources */,
 				797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */,
 				79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */,
+				7968059F2845687A00BAD979 /* EmailValidation.swift in Sources */,
 				79DE15D128341BAB00342C02 /* OrganisationCreationViewController.swift in Sources */,
+				796805B42845822000BAD979 /* UserRole.swift in Sources */,
 				79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */,
+				796805A328456EF200BAD979 /* ShiftsViewController.swift in Sources */,
+				7968059A2845631B00BAD979 /* TokenModel.swift in Sources */,
+				796805A52845800200BAD979 /* OrganisationUsersTableViewController.swift in Sources */,
 				797648D62832637500E1847F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +550,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MU7S6322ML;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Logotime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -455,6 +580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MU7S6322ML;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Logotime/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

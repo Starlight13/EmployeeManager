@@ -40,7 +40,7 @@ class OwnerCreationViewController: UIViewController {
     }
 
     @IBAction func nextStepPressed(_ sender: UIButton) {
-        if !emailTextField.text!.isEmpty &&
+        if EmailValidation.isValid(emailTextField.text!) &&
            !phoneNumberTextField.text!.isEmpty &&
            !passwordTextField.text!.isEmpty &&
            !firstNameTextField.text!.isEmpty &&

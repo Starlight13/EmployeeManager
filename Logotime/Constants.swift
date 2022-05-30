@@ -23,4 +23,11 @@ struct K {
         static let primaryColor = "PrimaryColor"
         static let secondaryColor = "Color"
     }
+    struct VC {
+        static let loginNavVC = "loginNavigationController"
+        static let mainTabVC = "mainTabBarController"
+    }
+    struct reusableCells {
+        static let organisationUserCell = "organisationUserCell"
+    }
 }

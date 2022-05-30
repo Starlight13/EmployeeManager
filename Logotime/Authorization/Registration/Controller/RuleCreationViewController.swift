@@ -104,10 +104,19 @@ class RuleCreationViewController: UIViewController {
             let requestURL = "\(K.baseURL)\(K.Endpoints.organisationRequest)"
             
             
-            AF.request(requestURL, method: .post, parameters: organisationRequestParameters, encoder: JSONParameterEncoder.default).validate().response {response in
+            AF.request(requestURL, method: .post, parameters: organisationRequestParameters, encoder: JSONParameterEncoder.default).validate().responseData {response in
                 //TODO: Validate Response
                 debugPrint(response)
-                self.performSegue(withIdentifier: K.Segues.registrationToCreationToMain, sender: self)
+                switch response.result {
+                case.success:
+                    print("Success!")
+                    print(response.value)
+                    self.navigationController?.popToRootViewController(animated: true)
+                case let .failure(error):
+                    print(error)
+                    print(response.value)
+                }
+//                self.performSegue(withIdentifier: K.Segues.registrationToCreationToMain, sender: self)
             }
         }
     }
