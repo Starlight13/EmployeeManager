@@ -1,16 +1,27 @@
 //
-//  OrganisationUsersTableViewController.swift
+//  AccountSettingsTableViewController.swift
 //  Logotime
 //
 //  Created by dsadas asdasd on 31.05.2022.
 //
 
 import UIKit
+import JWTDecode
 
-class OrganisationUsersTableViewController: UITableViewController {
+class AccountSettingsTableViewController: UITableViewController {
+    
+    let menuForEveryone = [
+        MenuItemModel(menuName: "Organisation users", segueIdentifier: K.Segues.menuToUsers)
+    ]
+    
+    var menu: [MenuItemModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menu.append(contentsOf: menuForEveryone)
+        print(menu.count)
+        tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,18 +34,37 @@ class OrganisationUsersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return menu.count + 2
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.menuHeaderCell) as! MenuHeaderTableViewCell
+            do {
+                let jwt = try decode(jwt: Token.token ?? "")
+                cell.userNameLabel.text = "\(jwt.body["firstName"] ?? "") \(jwt.body["lastName"] ?? "")"
+            } catch {
+                print(error)
+            }
+            return cell
+        } else if indexPath.row == (menu.count + 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.logoutCell)!
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.menuItemCell) as! MenuItemTableViewCell
+            cell.menuItemLabel.text = menu[indexPath.row - 1].menuName
+            return cell
+        }
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let reuseIdentifier = tableView.cellForRow(at: indexPath)?.reuseIdentifier
+        if reuseIdentifier == K.reusableCells.menuItemCell{
+            performSegue(withIdentifier: menu[indexPath.row - 1].segueIdentifier, sender: self)
+        } else if reuseIdentifier == K.reusableCells.logoutCell {
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.logout()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

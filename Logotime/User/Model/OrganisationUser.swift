@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OrganisationUser {
+struct OrganisationUser: Codable {
     var id: String
     var lastName: String
     var firstName: String

@@ -18,6 +18,7 @@ struct K {
         static let organisationCreationToRuleCreation = "organisationToRuleRegistration"
         static let registrationToCreationToMain = "registrationToMain"
         static let loginToMain = "loginToMain"
+        static let menuToUsers = "menuToUsers"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"
@@ -28,6 +29,10 @@ struct K {
         static let mainTabVC = "mainTabBarController"
     }
     struct reusableCells {
-        static let organisationUserCell = "organisationUserCell"
+        static let userCell = "organisationUserCell"
+        static let userCellNibName = "UserTableViewCell"
+        static let menuHeaderCell = "menuHeaderCell"
+        static let menuItemCell = "menuItemCell"
+        static let logoutCell = "logoutCell"
     }
 }
