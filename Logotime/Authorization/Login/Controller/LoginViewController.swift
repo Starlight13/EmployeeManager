@@ -30,10 +30,7 @@ class LoginViewController: WelcomeViewController {
                     switch response.result {
                     case .success:
                         print("Validation Successful")
-                        Token.token = response.value!.token
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let mainTabBarController = storyboard.instantiateViewController(identifier: K.VC.mainTabVC)
-                        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController, animated: true)
+                        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.login(token: response.value!.token)
                     case let .failure(error):
                         debugPrint(response)
                         print(error)

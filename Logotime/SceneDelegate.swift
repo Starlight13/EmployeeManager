@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import Alamofire
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,13 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if case Token.token = KeychainWrapper.standard.string(forKey: "token") {
-            let mainTabBarController = storyboard.instantiateViewController(identifier: K.VC.mainTabVC)
-            window?.rootViewController = mainTabBarController
+        if let token = Token.token {
+            login()
         } else {
-            let loginNavigationController = storyboard.instantiateViewController(withIdentifier: K.VC.loginNavVC)
-            window?.rootViewController = loginNavigationController
+            logout()
         }
     }
 
@@ -62,6 +60,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UIView.transition(with: window, duration: 0.5, options: [.transitionFlipFromLeft], animations: nil, completion: nil)
     }
 
+    func login() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: K.VC.mainTabVC)
+        changeRootViewController(mainTabBarController, animated: true)
+    }
+    
+    func login(token: String) {
+        Token.token = token
+        login()
+    }
+    
+    func logout() {
+        Token.token = nil
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginNavigationController = storyboard.instantiateViewController(withIdentifier: K.VC.loginNavVC)
+        changeRootViewController(loginNavigationController, animated: true)
+    }
 
 }
 

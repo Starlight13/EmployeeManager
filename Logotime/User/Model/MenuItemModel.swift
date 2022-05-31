@@ -7,4 +7,7 @@
 
 import Foundation
 
-struct 
+struct MenuItemModel {
+    let menuName: String
+    let segueIdentifier: String
+}

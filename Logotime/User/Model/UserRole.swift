@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UserRole: String, Encodable {
+enum UserRole: String, Codable {
     case owner = "OWNER"
     case admin = "ADMINISTRATOR"
     case employee = "EMPLOYEE"
