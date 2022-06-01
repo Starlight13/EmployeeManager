@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		45C3CE6EB76B8008F4038363 /* Pods_Logotime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3191B4C53C0CF85E0BBA07 /* Pods_Logotime.framework */; };
+		792D084F28477495005E9699 /* UserDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D084E28477495005E9699 /* UserDetailTableViewController.swift */; };
+		792D085328478306005E9699 /* UserDetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085228478306005E9699 /* UserDetailsHeaderTableViewCell.swift */; };
+		792D0855284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D0854284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift */; };
+		792D085728478D1E005E9699 /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085628478D1E005E9699 /* UserDetailsTableViewCell.swift */; };
 		795281E02835922C0068C810 /* OrganisationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281DF2835922C0068C810 /* OrganisationSize.swift */; };
 		795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281E12835935C0068C810 /* RuleCreationViewController.swift */; };
 		7968059A2845631B00BAD979 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805992845631B00BAD979 /* TokenModel.swift */; };
@@ -45,6 +49,10 @@
 /* Begin PBXFileReference section */
 		0F3E80A9942F433FCBE01C86 /* Pods-Logotime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logotime.release.xcconfig"; path = "Target Support Files/Pods-Logotime/Pods-Logotime.release.xcconfig"; sourceTree = "<group>"; };
 		5D7D6C52548C474A16CE0349 /* Pods-Logotime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logotime.debug.xcconfig"; path = "Target Support Files/Pods-Logotime/Pods-Logotime.debug.xcconfig"; sourceTree = "<group>"; };
+		792D084E28477495005E9699 /* UserDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewController.swift; sourceTree = "<group>"; };
+		792D085228478306005E9699 /* UserDetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		792D0854284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPhoneTableViewCell.swift; sourceTree = "<group>"; };
+		792D085628478D1E005E9699 /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		795281DF2835922C0068C810 /* OrganisationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationSize.swift; sourceTree = "<group>"; };
 		795281E12835935C0068C810 /* RuleCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationViewController.swift; sourceTree = "<group>"; };
 		796805992845631B00BAD979 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
@@ -222,6 +230,9 @@
 				796805B7284697C900BAD979 /* UserTableViewCell.xib */,
 				796805BF2846A6F600BAD979 /* MenuItemTableViewCell.swift */,
 				796805C12846A8A200BAD979 /* MenuHeaderTableViewCell.swift */,
+				792D085228478306005E9699 /* UserDetailsHeaderTableViewCell.swift */,
+				792D0854284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift */,
+				792D085628478D1E005E9699 /* UserDetailsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 				796805A42845800200BAD979 /* UsersTableViewController.swift */,
 				796805BB2846A22D00BAD979 /* AccountSettingsTableViewController.swift */,
 				796805C92846BD6D00BAD979 /* CreateUserViewController.swift */,
+				792D084E28477495005E9699 /* UserDetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -430,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79DE15D328343E5700342C02 /* RadioButtonsController.swift in Sources */,
+				792D085728478D1E005E9699 /* UserDetailsTableViewCell.swift in Sources */,
 				79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */,
 				796805B8284697C900BAD979 /* UserTableViewCell.swift in Sources */,
 				796805CA2846BD6D00BAD979 /* CreateUserViewController.swift in Sources */,
@@ -441,6 +454,7 @@
 				79CCCFA62829902B00C44D41 /* AppDelegate.swift in Sources */,
 				795281E02835922C0068C810 /* OrganisationSize.swift in Sources */,
 				795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */,
+				792D084F28477495005E9699 /* UserDetailTableViewController.swift in Sources */,
 				79DE15CF28340B7400342C02 /* OwnerCreationViewController.swift in Sources */,
 				796805B02845812E00BAD979 /* OrganisationUser.swift in Sources */,
 				797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */,
@@ -448,12 +462,14 @@
 				79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */,
 				7968059F2845687A00BAD979 /* EmailValidation.swift in Sources */,
 				79DE15D128341BAB00342C02 /* OrganisationCreationViewController.swift in Sources */,
+				792D0855284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift in Sources */,
 				796805B42845822000BAD979 /* UserRole.swift in Sources */,
 				79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */,
 				796805A328456EF200BAD979 /* ShiftsViewController.swift in Sources */,
 				796805C72846B93B00BAD979 /* CreateUserRequest.swift in Sources */,
 				7968059A2845631B00BAD979 /* TokenModel.swift in Sources */,
 				796805A52845800200BAD979 /* UsersTableViewController.swift in Sources */,
+				792D085328478306005E9699 /* UserDetailsHeaderTableViewCell.swift in Sources */,
 				796805C42846ABC700BAD979 /* MenuItemModel.swift in Sources */,
 				796805BC2846A22D00BAD979 /* AccountSettingsTableViewController.swift in Sources */,
 				797648D62832637500E1847F /* Constants.swift in Sources */,

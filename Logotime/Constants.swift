@@ -19,6 +19,7 @@ struct K {
         static let registrationToCreationToMain = "registrationToMain"
         static let loginToMain = "loginToMain"
         static let menuToUsers = "menuToUsers"
+        static let userListToDetail = "userListToDetail"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"
@@ -34,5 +35,10 @@ struct K {
         static let menuHeaderCell = "menuHeaderCell"
         static let menuItemCell = "menuItemCell"
         static let logoutCell = "logoutCell"
+        struct UserDetailsTable {
+            static let userDetailsNameCell = "userDetailsNameCell"
+            static let userDetailsPhoneCell = "userDetailsPhoneCell"
+            static let userDetailsCell = "userDetailsCell"
+        }
     }
 }
