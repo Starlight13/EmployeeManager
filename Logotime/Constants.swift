@@ -20,6 +20,7 @@ struct K {
         static let loginToMain = "loginToMain"
         static let menuToUsers = "menuToUsers"
         static let userListToDetail = "userListToDetail"
+        static let detailsToEditUser = "detailsToEditUser"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"

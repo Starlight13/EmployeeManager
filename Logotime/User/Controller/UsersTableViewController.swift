@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import JWTDecode
 
 class UsersTableViewController: UITableViewController {
     
@@ -22,20 +21,12 @@ class UsersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            let jwt = try decode(jwt: Token.token ?? "")
-            if let role = UserRole(rawValue: "\(jwt.body["role"] ?? "")") {
-                print(role)
-                if role == .admin || role == .owner {
-                    print("has rights")
-                    self.navigationItem.rightBarButtonItem = addBarButton
-                } else {
-                    self.navigationItem.rightBarButtonItem = nil
-                }
+        if let role = UserRole(rawValue: "\(Token.tokenBody["role"] ?? "")") {
+            if role == .admin || role == .owner {
+                self.navigationItem.rightBarButtonItem = addBarButton
+            } else {
+                self.navigationItem.rightBarButtonItem = nil
             }
-        } catch {
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.logout()
-            print(error)
         }
         
         tableView.register(UINib(nibName: K.reusableCells.userCellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCells.userCell)
@@ -86,7 +77,6 @@ class UsersTableViewController: UITableViewController {
     //MARK: - Loading data
     
     func loadData() {
-        print("Loading data")
         let url = "\(K.baseURL)\(K.Endpoints.userRequest)"
         let headers: HTTPHeaders = [
             .authorization(bearerToken: Token.token ?? "")

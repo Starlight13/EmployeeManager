@@ -12,6 +12,8 @@
 		792D085328478306005E9699 /* UserDetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085228478306005E9699 /* UserDetailsHeaderTableViewCell.swift */; };
 		792D0855284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D0854284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift */; };
 		792D085728478D1E005E9699 /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085628478D1E005E9699 /* UserDetailsTableViewCell.swift */; };
+		792D08592847ACB9005E9699 /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D08582847ACB9005E9699 /* UpdateUserRequest.swift */; };
+		792D085B2847BBB9005E9699 /* UpdateUserRoleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085A2847BBB9005E9699 /* UpdateUserRoleRequest.swift */; };
 		795281E02835922C0068C810 /* OrganisationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281DF2835922C0068C810 /* OrganisationSize.swift */; };
 		795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281E12835935C0068C810 /* RuleCreationViewController.swift */; };
 		7968059A2845631B00BAD979 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805992845631B00BAD979 /* TokenModel.swift */; };
@@ -28,7 +30,7 @@
 		796805C22846A8A200BAD979 /* MenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805C12846A8A200BAD979 /* MenuHeaderTableViewCell.swift */; };
 		796805C42846ABC700BAD979 /* MenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805C32846ABC700BAD979 /* MenuItemModel.swift */; };
 		796805C72846B93B00BAD979 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805C62846B93B00BAD979 /* CreateUserRequest.swift */; };
-		796805CA2846BD6D00BAD979 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805C92846BD6D00BAD979 /* CreateUserViewController.swift */; };
+		796805CA2846BD6D00BAD979 /* CreateUpdateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805C92846BD6D00BAD979 /* CreateUpdateUserViewController.swift */; };
 		797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797648D32832623400E1847F /* OwnerCreationModel.swift */; };
 		797648D62832637500E1847F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797648D52832637500E1847F /* Constants.swift */; };
 		79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */; };
@@ -53,6 +55,8 @@
 		792D085228478306005E9699 /* UserDetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		792D0854284783AA005E9699 /* UserDetailsPhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPhoneTableViewCell.swift; sourceTree = "<group>"; };
 		792D085628478D1E005E9699 /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		792D08582847ACB9005E9699 /* UpdateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
+		792D085A2847BBB9005E9699 /* UpdateUserRoleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRoleRequest.swift; sourceTree = "<group>"; };
 		795281DF2835922C0068C810 /* OrganisationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationSize.swift; sourceTree = "<group>"; };
 		795281E12835935C0068C810 /* RuleCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationViewController.swift; sourceTree = "<group>"; };
 		796805992845631B00BAD979 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
@@ -69,7 +73,7 @@
 		796805C12846A8A200BAD979 /* MenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		796805C32846ABC700BAD979 /* MenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemModel.swift; sourceTree = "<group>"; };
 		796805C62846B93B00BAD979 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
-		796805C92846BD6D00BAD979 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		796805C92846BD6D00BAD979 /* CreateUpdateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUpdateUserViewController.swift; sourceTree = "<group>"; };
 		797648D32832623400E1847F /* OwnerCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerCreationModel.swift; sourceTree = "<group>"; };
 		797648D52832637500E1847F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Logotime/Constants.swift; sourceTree = "<group>"; };
 		79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationModel.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 				796805B32845822000BAD979 /* UserRole.swift */,
 				796805C32846ABC700BAD979 /* MenuItemModel.swift */,
 				796805C62846B93B00BAD979 /* CreateUserRequest.swift */,
+				792D08582847ACB9005E9699 /* UpdateUserRequest.swift */,
+				792D085A2847BBB9005E9699 /* UpdateUserRoleRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,7 +248,7 @@
 			children = (
 				796805A42845800200BAD979 /* UsersTableViewController.swift */,
 				796805BB2846A22D00BAD979 /* AccountSettingsTableViewController.swift */,
-				796805C92846BD6D00BAD979 /* CreateUserViewController.swift */,
+				796805C92846BD6D00BAD979 /* CreateUpdateUserViewController.swift */,
 				792D084E28477495005E9699 /* UserDetailTableViewController.swift */,
 			);
 			path = Controller;
@@ -445,12 +451,13 @@
 				792D085728478D1E005E9699 /* UserDetailsTableViewCell.swift in Sources */,
 				79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */,
 				796805B8284697C900BAD979 /* UserTableViewCell.swift in Sources */,
-				796805CA2846BD6D00BAD979 /* CreateUserViewController.swift in Sources */,
+				796805CA2846BD6D00BAD979 /* CreateUpdateUserViewController.swift in Sources */,
 				79CCCFBD28299EC800C44D41 /* LoginViewController.swift in Sources */,
 				79B3AA5128398EA7002D9022 /* OrganisationRegistrationModel.swift in Sources */,
 				796805C02846A6F600BAD979 /* MenuItemTableViewCell.swift in Sources */,
 				7968059C2845647900BAD979 /* TokenResponseModel.swift in Sources */,
 				79CCCFAA2829902B00C44D41 /* WelcomeViewController.swift in Sources */,
+				792D085B2847BBB9005E9699 /* UpdateUserRoleRequest.swift in Sources */,
 				79CCCFA62829902B00C44D41 /* AppDelegate.swift in Sources */,
 				795281E02835922C0068C810 /* OrganisationSize.swift in Sources */,
 				795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */,
@@ -469,6 +476,7 @@
 				796805C72846B93B00BAD979 /* CreateUserRequest.swift in Sources */,
 				7968059A2845631B00BAD979 /* TokenModel.swift in Sources */,
 				796805A52845800200BAD979 /* UsersTableViewController.swift in Sources */,
+				792D08592847ACB9005E9699 /* UpdateUserRequest.swift in Sources */,
 				792D085328478306005E9699 /* UserDetailsHeaderTableViewCell.swift in Sources */,
 				796805C42846ABC700BAD979 /* MenuItemModel.swift in Sources */,
 				796805BC2846A22D00BAD979 /* AccountSettingsTableViewController.swift in Sources */,

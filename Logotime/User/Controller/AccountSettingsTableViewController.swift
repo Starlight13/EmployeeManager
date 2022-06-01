@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import JWTDecode
 
 class AccountSettingsTableViewController: UITableViewController {
     
@@ -33,12 +32,7 @@ class AccountSettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.menuHeaderCell) as! MenuHeaderTableViewCell
-            do {
-                let jwt = try decode(jwt: Token.token ?? "")
-                cell.userNameLabel.text = "\(jwt.body["firstName"] ?? "") \(jwt.body["lastName"] ?? "")"
-            } catch {
-                print(error)
-            }
+            cell.userNameLabel.text = "\(Token.tokenBody["firstName"] ?? "") \(Token.tokenBody["lastName"] ?? "")"
             return cell
         } else if indexPath.row == (menu.count + 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.logoutCell)!

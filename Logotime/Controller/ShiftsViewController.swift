@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import JWTDecode
 
 class ShiftsViewController: UIViewController {
 

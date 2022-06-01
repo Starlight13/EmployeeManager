@@ -18,7 +18,11 @@ class UserDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(user)
+        
+        if let role = UserRole(rawValue: "\(Token.tokenBody["role"] ?? "")"), role == .employee ||
+            user?.userRole == .owner {
+            navigationItem.rightBarButtonItem = nil
+        }
     }
 
     // MARK: - Table view data source
@@ -31,7 +35,6 @@ class UserDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            print("Row 0")
             let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.UserDetailsTable.userDetailsNameCell) as! UserDetailsHeaderTableViewCell
             cell.userNameLabel.text = "\(user?.firstName ?? "") \(user?.lastName ?? "")"
             if let isActive = user?.active, isActive {
@@ -43,7 +46,6 @@ class UserDetailTableViewController: UITableViewController {
             }
             return cell
         case 1:
-            print("Row 1")
             let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.UserDetailsTable.userDetailsPhoneCell) as! UserDetailsPhoneTableViewCell
             cell.phoneNumberLabel.text = user?.phoneNumber
             cell.phoneNumber = user?.phoneNumber
@@ -107,14 +109,16 @@ class UserDetailTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == K.Segues.detailsToEditUser {
+            let destinationVC = segue.destination as! CreateUpdateUserViewController
+            destinationVC.user = user
+        }
     }
-    */
+    
     
 }
