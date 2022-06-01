@@ -14,6 +14,8 @@
 		792D085728478D1E005E9699 /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085628478D1E005E9699 /* UserDetailsTableViewCell.swift */; };
 		792D08592847ACB9005E9699 /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D08582847ACB9005E9699 /* UpdateUserRequest.swift */; };
 		792D085B2847BBB9005E9699 /* UpdateUserRoleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085A2847BBB9005E9699 /* UpdateUserRoleRequest.swift */; };
+		792D085F2847E038005E9699 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D085E2847E038005E9699 /* TabBarViewController.swift */; };
+		792D08612847E100005E9699 /* AddShiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D08602847E100005E9699 /* AddShiftViewController.swift */; };
 		795281E02835922C0068C810 /* OrganisationSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281DF2835922C0068C810 /* OrganisationSize.swift */; };
 		795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795281E12835935C0068C810 /* RuleCreationViewController.swift */; };
 		7968059A2845631B00BAD979 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805992845631B00BAD979 /* TokenModel.swift */; };
@@ -36,6 +38,7 @@
 		79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */; };
 		79B3AA5128398EA7002D9022 /* OrganisationRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */; };
 		79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA52283AD6F2002D9022 /* LoginModel.swift */; };
+		79B99099284814C600173C9E /* ShiftTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B99098284814C600173C9E /* ShiftTimeModel.swift */; };
 		79CCCFA62829902B00C44D41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA52829902B00C44D41 /* AppDelegate.swift */; };
 		79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA72829902B00C44D41 /* SceneDelegate.swift */; };
 		79CCCFAA2829902B00C44D41 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA92829902B00C44D41 /* WelcomeViewController.swift */; };
@@ -57,6 +60,8 @@
 		792D085628478D1E005E9699 /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		792D08582847ACB9005E9699 /* UpdateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
 		792D085A2847BBB9005E9699 /* UpdateUserRoleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRoleRequest.swift; sourceTree = "<group>"; };
+		792D085E2847E038005E9699 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		792D08602847E100005E9699 /* AddShiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShiftViewController.swift; sourceTree = "<group>"; };
 		795281DF2835922C0068C810 /* OrganisationSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationSize.swift; sourceTree = "<group>"; };
 		795281E12835935C0068C810 /* RuleCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationViewController.swift; sourceTree = "<group>"; };
 		796805992845631B00BAD979 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 		79B3AA4E28398CCC002D9022 /* RuleCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCreationModel.swift; sourceTree = "<group>"; };
 		79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationRegistrationModel.swift; sourceTree = "<group>"; };
 		79B3AA52283AD6F2002D9022 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		79B99098284814C600173C9E /* ShiftTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTimeModel.swift; sourceTree = "<group>"; };
 		79CCCFA22829902A00C44D41 /* Logotime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logotime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CCCFA52829902B00C44D41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CCCFA72829902B00C44D41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +119,24 @@
 				0F3E80A9942F433FCBE01C86 /* Pods-Logotime.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		792D085C2847DF8F005E9699 /* Shifts */ = {
+			isa = PBXGroup;
+			children = (
+				79B990972848149400173C9E /* Model */,
+				792D085D2847DFD9005E9699 /* Controller */,
+			);
+			path = Shifts;
+			sourceTree = "<group>";
+		};
+		792D085D2847DFD9005E9699 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				796805A228456EF200BAD979 /* ShiftsViewController.swift */,
+				792D08602847E100005E9699 /* AddShiftViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		7968059D2845686900BAD979 /* Validation */ = {
@@ -261,6 +285,14 @@
 			path = UserNetworkService;
 			sourceTree = "<group>";
 		};
+		79B990972848149400173C9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79B99098284814C600173C9E /* ShiftTimeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		79CCCF992829902A00C44D41 = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +315,7 @@
 		79CCCFA42829902A00C44D41 /* Logotime */ = {
 			isa = PBXGroup;
 			children = (
+				792D085C2847DF8F005E9699 /* Shifts */,
 				796805B12845820B00BAD979 /* User */,
 				796805A62845801200BAD979 /* Authorization */,
 				7968059D2845686900BAD979 /* Validation */,
@@ -318,7 +351,7 @@
 			children = (
 				79CCCFA92829902B00C44D41 /* WelcomeViewController.swift */,
 				79DE15D228343E5700342C02 /* RadioButtonsController.swift */,
-				796805A228456EF200BAD979 /* ShiftsViewController.swift */,
+				792D085E2847E038005E9699 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -464,8 +497,11 @@
 				792D084F28477495005E9699 /* UserDetailTableViewController.swift in Sources */,
 				79DE15CF28340B7400342C02 /* OwnerCreationViewController.swift in Sources */,
 				796805B02845812E00BAD979 /* OrganisationUser.swift in Sources */,
+				792D08612847E100005E9699 /* AddShiftViewController.swift in Sources */,
 				797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */,
+				792D085F2847E038005E9699 /* TabBarViewController.swift in Sources */,
 				796805C22846A8A200BAD979 /* MenuHeaderTableViewCell.swift in Sources */,
+				79B99099284814C600173C9E /* ShiftTimeModel.swift in Sources */,
 				79B3AA4F28398CCC002D9022 /* RuleCreationModel.swift in Sources */,
 				7968059F2845687A00BAD979 /* EmailValidation.swift in Sources */,
 				79DE15D128341BAB00342C02 /* OrganisationCreationViewController.swift in Sources */,

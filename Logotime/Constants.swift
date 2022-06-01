@@ -29,6 +29,7 @@ struct K {
     struct VC {
         static let loginNavVC = "loginNavigationController"
         static let mainTabVC = "mainTabBarController"
+        static let addShiftNavVC = "addShiftNavigationController"
     }
     struct reusableCells {
         static let userCell = "organisationUserCell"
