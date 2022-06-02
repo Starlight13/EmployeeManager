@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum OrganisationSize: String, Encodable {
+enum OrganisationSize: String, Codable {
     case small = "SMALL"
     case medium = "MIDDLE"
     case big = "LARGE"

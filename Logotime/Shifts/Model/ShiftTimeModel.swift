@@ -8,6 +8,6 @@
 import Foundation
 
 struct ShiftTimeModel: Codable {
-    var shiftStart: Date
-    var shiftEnd: Date
+    var shiftStart: String
+    var shiftFinish: String
 }

@@ -11,6 +11,6 @@ struct OrganisationRegistrationModel: Encodable {
     let name: String
     let organizationSize: OrganisationSize
     let user: OwnerCreationModel
-    let rules: RuleCreationModel
+    let rules: OrganisationRulesModel
     let maxEmployeeShiftApplication: Int?
 }

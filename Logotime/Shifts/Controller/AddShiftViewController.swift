@@ -24,6 +24,7 @@ class AddShiftViewController: UIViewController {
     var dates = Set<Date>()
     var startTime = Date()
     var endTime = Date()
+    var shiftTimes = [ShiftTimeModel]()
     
     @IBOutlet fileprivate weak var koyomi: Koyomi! {
         didSet {
@@ -60,15 +61,14 @@ class AddShiftViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == K.Segues.addShiftToAssign {
+            let destinationVC = segue.destination as! AssignShiftsViewController
+            destinationVC.shiftTimes = shiftTimes
+        }
     }
-    */
     
     //MARK: - Actions
     
@@ -90,10 +90,11 @@ class AddShiftViewController: UIViewController {
                     formatter.dateFormat = "HH:mm"
                     sender.setTitle(formatter.string(from: dt), for: .normal)
                     if sender.tag == 0 {
-                        self.startTime = dt.localDate()
+                        self.startTime = dt
                     } else {
-                        self.endTime = dt.localDate()
+                        self.endTime = dt
                     }
+                    self.shiftTimes = []
                 }
             }
     }
@@ -102,8 +103,6 @@ class AddShiftViewController: UIViewController {
         guard dates.count != 0 else {
             return
         }
-        var shiftTimes = [ShiftTimeModel]()
-        
         for date in dates {
             let calendar = Calendar.current
             
@@ -124,10 +123,13 @@ class AddShiftViewController: UIViewController {
             let endMinute = calendar.component(.minute, from: endTime)
             guard let endDate = calendar.date(bySettingHour: endHour, minute: endMinute, second: 0, of: fixedEndDate) else { return }
             
-            shiftTimes.append(ShiftTimeModel(shiftStart: startDate, shiftEnd: endDate))
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
+            
+            
+            shiftTimes.append(ShiftTimeModel(shiftStart: formatter.string(from: startDate), shiftFinish: formatter.string(from: endDate)))
         }
-        
-        print(shiftTimes)
+        performSegue(withIdentifier: K.Segues.addShiftToAssign, sender: self)
     }
     
     

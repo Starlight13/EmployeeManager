@@ -12,6 +12,7 @@ struct K {
     struct Endpoints {
         static let organisationRequest = "/organization"
         static let userRequest = "/user"
+        static let shiftRequest = "/shift"
     }
     struct Segues {
         static let userCreationToOrganisationCreation = "userToOrganisationRegistration"
@@ -21,6 +22,8 @@ struct K {
         static let menuToUsers = "menuToUsers"
         static let userListToDetail = "userListToDetail"
         static let detailsToEditUser = "detailsToEditUser"
+        static let addShiftToAssign = "addShiftToAssign"
+        static let assignShiftToDetails = "assignShiftToDetails"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"
@@ -41,6 +44,9 @@ struct K {
             static let userDetailsNameCell = "userDetailsNameCell"
             static let userDetailsPhoneCell = "userDetailsPhoneCell"
             static let userDetailsCell = "userDetailsCell"
+        }
+        struct AssignShift {
+            static let assignShiftCell = "assignShiftCell"
         }
     }
 }

@@ -86,7 +86,7 @@ class CreateUpdateUserViewController: UIViewController {
                         print(self.user!.id)
                         if let role = UserRole(rawValue: "\(Token.tokenBody["role"] ?? "")"), role == .owner{
                             let userRolerequestURL = "\(K.baseURL)\(K.Endpoints.userRequest)/userRole"
-                            let userRolerequestParams = UpdateUserRoleRequest(userId: self.user?.id ?? "", userRole: userRole)
+                            let userRolerequestParams = UpdateUserRoleRequest(userId: self.user?.id ?? UUID(), userRole: userRole)
                             AF.request(userRolerequestURL, method: .patch, parameters: userRolerequestParams, encoder: JSONParameterEncoder.default, headers: headers).validate().responseData { response in
                                 print("Success!")
                                 print(response.value)

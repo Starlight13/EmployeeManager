@@ -8,6 +8,6 @@
 import Foundation
 
 struct UpdateUserRoleRequest: Codable {
-    var userId: String
+    var userId: UUID
     var userRole: UserRole
 }

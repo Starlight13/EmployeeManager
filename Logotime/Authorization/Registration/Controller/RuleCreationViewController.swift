@@ -99,7 +99,7 @@ class RuleCreationViewController: UIViewController {
             } else {
                 notAssignedShiftRule = .prohibited
             }
-            let rules = RuleCreationModel(substituteMeRule: substituteRule, swapShiftRule: swapRule, checkInRule: checkinRule, notAssignedShiftRule: notAssignedShiftRule!)
+            let rules = OrganisationRulesModel(substituteMeRule: substituteRule, swapShiftRule: swapRule, checkInRule: checkinRule, notAssignedShiftRule: notAssignedShiftRule!)
             let organisationRequestParameters = OrganisationRegistrationModel(name: organisationName!, organizationSize: organisationSize!, user: owner!, rules: rules, maxEmployeeShiftApplication: maxNumberOfApplications)
             let requestURL = "\(K.baseURL)\(K.Endpoints.organisationRequest)"
             
