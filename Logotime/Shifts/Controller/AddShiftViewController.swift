@@ -43,10 +43,9 @@ class AddShiftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentDateLabel.text = koyomi.currentDateString()
-        if let currentTime = Date().toHoursMinutes() {
-            startTimeButton.setTitle(currentTime, for: .normal)
-            endTimeButton.setTitle(currentTime, for: .normal)
-        }
+        let currentTime = Date().changeDateFormat(to: K.dateFormats.hourMinuteFormat)
+        startTimeButton.setTitle(currentTime, for: .normal)
+        endTimeButton.setTitle(currentTime, for: .normal)
         
         // Do any additional setup after loading the view.
     }
@@ -77,9 +76,8 @@ class AddShiftViewController: UIViewController {
     @IBAction func datePickerPressed(_ sender: UIButton) {
         DatePickerDialog().show("Select time", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .time) { date in
                 if let dt = date {
-                    if let formatedDate = dt.toHoursMinutes() {
-                        sender.setTitle(formatedDate, for: .normal)
-                    }
+                    sender.setTitle(dt.changeDateFormat(to: K.dateFormats.hourMinuteFormat), for: .normal)
+                    
                     if sender.tag == 0 {
                         self.startTime = dt
                     } else {
@@ -114,9 +112,7 @@ class AddShiftViewController: UIViewController {
             let endMinute = calendar.component(.minute, from: endTime)
             guard let endDate = calendar.date(bySettingHour: endHour, minute: endMinute, second: 0, of: fixedEndDate) else { return }
             
-            if let start = startDate.toServerFormat(), let end = endDate.toServerFormat(){
-            shiftTimes.append(ShiftTimeModel(shiftStart: start, shiftFinish: end))
-            }
+            shiftTimes.append(ShiftTimeModel(shiftStart: startDate.changeDateFormat(to: K.dateFormats.serverFormat), shiftFinish: endDate.changeDateFormat(to: K.dateFormats.serverFormat)))
         }
         performSegue(withIdentifier: K.Segues.addShiftToAssign, sender: self)
     }

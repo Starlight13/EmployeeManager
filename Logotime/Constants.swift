@@ -24,6 +24,7 @@ struct K {
         static let detailsToEditUser = "detailsToEditUser"
         static let addShiftToAssign = "addShiftToAssign"
         static let assignShiftToDetails = "assignShiftToDetails"
+        static let shiftToDetails = "shiftToDetails"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"
@@ -43,6 +44,7 @@ struct K {
         struct ShiftsTable {
             static let shiftCell = "shiftCell"
             static let shiftCellNibName = "ShiftTableViewCell"
+            static let taskCell = "taskCell"
         }
         struct UserDetailsTable {
             static let userDetailsNameCell = "userDetailsNameCell"
@@ -52,5 +54,12 @@ struct K {
         struct AssignShift {
             static let assignShiftCell = "assignShiftCell"
         }
+    }
+    struct dateFormats {
+        static let serverFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
+        static let serverFormatNoMs = "yyyy-MM-dd'T'HH:mm:ss"
+        static let hourMinuteFormat = "HH:mm"
+        static let dateFormat = "yyyy-MM-dd"
+        static let dateNoYearFormat = "dd.MM"
     }
 }

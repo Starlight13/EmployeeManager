@@ -33,7 +33,7 @@ class AssignShiftsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Segues.assignShiftToDetails {
-            let destinationVC = segue.destination as! ShiftDetailsViewController
+            let destinationVC = segue.destination as! ShiftDetailsCreateViewController
             destinationVC.shiftTimes = shiftTimes
             let asigneeIds = selectedUsers.map { $0.id }
             destinationVC.asigneeIds = asigneeIds

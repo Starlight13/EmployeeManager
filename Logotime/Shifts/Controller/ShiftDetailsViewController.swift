@@ -2,46 +2,73 @@
 //  ShiftDetailsViewController.swift
 //  Logotime
 //
-//  Created by dsadas asdasd on 02.06.2022.
+//  Created by dsadas asdasd on 03.06.2022.
 //
 
 import UIKit
-import Alamofire
 
 class ShiftDetailsViewController: UIViewController {
-    
-    @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var descriptionField: UITextView!
-    
-    var shiftTimes: [ShiftTimeModel]?
-    var asigneeIds: [UUID]?
 
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var shift: ShiftModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    
-    @IBAction func createShiftsTapped(_ sender: UIButton) {
-        if !titleField.text!.isEmpty &&
-            !descriptionField.text!.isEmpty {
-            let requestURL = "\(K.baseURL)\(K.Endpoints.shiftRequest)"
-            let parameters = ShiftCreateModel(userIds: asigneeIds ?? [], title: titleField.text!, description: descriptionField.text!, shifts: shiftTimes ?? [])
-            let headers: HTTPHeaders = [.authorization(bearerToken: Token.token ?? "")]
-            
-            print(parameters)
-            
-            AF.request(requestURL, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers)
-                .validate()
-                .response { response in
-                    switch response.result {
-                    case .success:
-                        self.navigationController?.popToRootViewController(animated: true)
-                        self.tabBarController?.selectedIndex = 0
-                    case let .failure(error):
-                        print(error)
-                    }
-                }
+        
+        if let shiftStartDay = shift?.shiftStart.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.dateNoYearFormat),
+           let shiftEndDay = shift?.shiftFinish.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.dateNoYearFormat) {
+            if shiftStartDay == shiftEndDay {
+                dateLabel.text = shiftStartDay
+            } else {
+                dateLabel.text = "\(shiftStartDay)-\(shiftEndDay)"
+            }
         }
+        
+        if let shiftStartTime = shift?.shiftStart.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.hourMinuteFormat),
+           let shiftEndTime = shift?.shiftFinish.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.hourMinuteFormat) {
+            timeLabel.text = "\(shiftStartTime) - \(shiftEndTime)"
+        }
+        
+        titleLabel.text = shift?.title
+        descriptionLabel.text = shift?.description
+        userNameLabel.text = "\(shift?.user.firstName ?? "") \(shift?.user.lastName ?? "")"
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+extension ShiftDetailsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shift?.tasks.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.ShiftsTable.taskCell)!
+        return cell
+    }
+    
+    
+}
+
+extension ShiftDetailsViewController: UITableViewDelegate {
     
 }

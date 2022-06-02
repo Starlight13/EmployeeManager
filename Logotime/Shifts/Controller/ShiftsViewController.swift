@@ -25,24 +25,44 @@ class ShiftsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.reusableCells.ShiftsTable.shiftCellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCells.ShiftsTable.shiftCell)
+        updateLabel()
         
         loadData(for: nil, unasigned: nil)
     }
     
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == K.Segues.shiftToDetails {
+            let destinationVC = segue.destination as! ShiftDetailsViewController
+            let selectedShift = shifts[tableView.indexPathForSelectedRow?.row ?? 0]
+            destinationVC.shift = selectedShift
+        }
     }
-    */
     
     //MARK: - Actions
     
+    func updateLabel() {
+        dateIntervalLabel.text = "\(startDate?.changeDateFormat(to: K.dateFormats.dateNoYearFormat) ?? "")-\(endDate?.changeDateFormat(to: K.dateFormats.dateNoYearFormat) ?? "")"
+    }
+    
     @IBAction func changeWeekPressed(_ sender: UIButton) {
+        let calendar = Calendar.current
+        
+        var changeBy = 1
+        if sender.tag == 0 {
+            changeBy = -1
+        }
+        
+        if let newStartDate = calendar.date(byAdding: .weekOfMonth, value: changeBy, to: startDate ?? Date()),
+           let newEndDate = calendar.date(byAdding: .weekOfMonth, value: changeBy, to: endDate ?? Date()) {
+            startDate = newStartDate
+            endDate = newEndDate
+            updateLabel()
+            loadData(for: nil, unasigned: nil)
+        }
     }
     
     @IBAction func filterPressed(_ sender: UIButton) {
@@ -54,8 +74,8 @@ class ShiftsViewController: UIViewController {
     //MARK: - Load data
     
     func loadData(for userId: UUID?, unasigned: Bool?) {
-        if let startFormatted = startDate?.toServerDateOnlyFormat(),
-           let endFormatted = endDate?.toServerDateOnlyFormat() {
+        if let startFormatted = startDate?.changeDateFormat(to: K.dateFormats.dateFormat),
+           let endFormatted = endDate?.changeDateFormat(to: K.dateFormats.dateFormat) {
             let requestURL = "\(K.baseURL)\(K.Endpoints.shiftRequest)"
             let headers: HTTPHeaders = [.authorization(bearerToken: Token.token ?? "")]
             var parameters: [String : String] = [
@@ -89,25 +109,6 @@ class ShiftsViewController: UIViewController {
                 }
         }
     }
-    
-    func getUser(for shift: ShiftModel) {
-        let requestURL = "\(K.baseURL)\(K.Endpoints.userRequest)/\(shift.user.id)"
-        let headers: HTTPHeaders = [.authorization(bearerToken: Token.token ?? "")]
-        
-        var userForShift: User?
-        
-        AF.request(requestURL, method: .get, headers: headers)
-            .validate()
-            .responseDecodable(of: User.self) { response in
-                    switch response.result {
-                    case let .success(user):
-                        print("Found user")
-                        userForShift = user
-                    case let .failure(error):
-                        print(error)
-                }
-            }
-    }
 }
 
 extension ShiftsViewController: UITableViewDataSource {
@@ -129,13 +130,15 @@ extension ShiftsViewController: UITableViewDataSource {
             default: return "\(shift.tasks.count) tasks"
             }
         }()
-        cell.startTimeLabel.text = shift.shiftStart.changeDateFormat(fromFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSSSS", toFormat: "HH:mm")
-        cell.endTimeLabel.text = shift.shiftFinish.changeDateFormat(fromFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSSSS", toFormat: "HH:mm")
+        cell.startTimeLabel.text = shift.shiftStart.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.hourMinuteFormat)
+        cell.endTimeLabel.text = shift.shiftFinish.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.hourMinuteFormat)
         return cell
     }
     
 }
 
 extension ShiftsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.Segues.shiftToDetails, sender: self)
+    }
 }
