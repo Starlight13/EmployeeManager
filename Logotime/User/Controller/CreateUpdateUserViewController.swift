@@ -20,7 +20,7 @@ class CreateUpdateUserViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var pageTitleLabel: UILabel!
     
-    var user: OrganisationUser?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()

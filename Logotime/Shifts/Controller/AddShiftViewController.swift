@@ -9,16 +9,6 @@ import UIKit
 import Koyomi
 import DatePickerDialog
 
-extension Date {
-    func localDate() -> Date {
-        let nowUTC = Date()
-        let timeZoneOffset = Double(TimeZone.current.secondsFromGMT(for: nowUTC))
-        guard let localDate = Calendar.current.date(byAdding: .second, value: Int(timeZoneOffset), to: self) else {return Date()}
-
-        return localDate
-    }
-}
-
 class AddShiftViewController: UIViewController {
 
     var dates = Set<Date>()
@@ -53,10 +43,11 @@ class AddShiftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentDateLabel.text = koyomi.currentDateString()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        startTimeButton.setTitle(formatter.string(from: Date()), for: .normal)
-        endTimeButton.setTitle(formatter.string(from: Date()), for: .normal)
+        if let currentTime = Date().toHoursMinutes() {
+            startTimeButton.setTitle(currentTime, for: .normal)
+            endTimeButton.setTitle(currentTime, for: .normal)
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -86,9 +77,9 @@ class AddShiftViewController: UIViewController {
     @IBAction func datePickerPressed(_ sender: UIButton) {
         DatePickerDialog().show("Select time", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .time) { date in
                 if let dt = date {
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "HH:mm"
-                    sender.setTitle(formatter.string(from: dt), for: .normal)
+                    if let formatedDate = dt.toHoursMinutes() {
+                        sender.setTitle(formatedDate, for: .normal)
+                    }
                     if sender.tag == 0 {
                         self.startTime = dt
                     } else {
@@ -123,11 +114,9 @@ class AddShiftViewController: UIViewController {
             let endMinute = calendar.component(.minute, from: endTime)
             guard let endDate = calendar.date(bySettingHour: endHour, minute: endMinute, second: 0, of: fixedEndDate) else { return }
             
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
-            
-            
-            shiftTimes.append(ShiftTimeModel(shiftStart: formatter.string(from: startDate), shiftFinish: formatter.string(from: endDate)))
+            if let start = startDate.toServerFormat(), let end = endDate.toServerFormat(){
+            shiftTimes.append(ShiftTimeModel(shiftStart: start, shiftFinish: end))
+            }
         }
         performSegue(withIdentifier: K.Segues.addShiftToAssign, sender: self)
     }

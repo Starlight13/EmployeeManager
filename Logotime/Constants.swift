@@ -40,6 +40,10 @@ struct K {
         static let menuHeaderCell = "menuHeaderCell"
         static let menuItemCell = "menuItemCell"
         static let logoutCell = "logoutCell"
+        struct ShiftsTable {
+            static let shiftCell = "shiftCell"
+            static let shiftCellNibName = "ShiftTableViewCell"
+        }
         struct UserDetailsTable {
             static let userDetailsNameCell = "userDetailsNameCell"
             static let userDetailsPhoneCell = "userDetailsPhoneCell"

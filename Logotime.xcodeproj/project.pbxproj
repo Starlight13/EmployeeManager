@@ -23,7 +23,7 @@
 		7968059F2845687A00BAD979 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968059E2845687A00BAD979 /* EmailValidation.swift */; };
 		796805A328456EF200BAD979 /* ShiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805A228456EF200BAD979 /* ShiftsViewController.swift */; };
 		796805A52845800200BAD979 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805A42845800200BAD979 /* UsersTableViewController.swift */; };
-		796805B02845812E00BAD979 /* OrganisationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805AF2845812E00BAD979 /* OrganisationUser.swift */; };
+		796805B02845812E00BAD979 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805AF2845812E00BAD979 /* User.swift */; };
 		796805B42845822000BAD979 /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805B32845822000BAD979 /* UserRole.swift */; };
 		796805B8284697C900BAD979 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796805B6284697C900BAD979 /* UserTableViewCell.swift */; };
 		796805B9284697C900BAD979 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796805B7284697C900BAD979 /* UserTableViewCell.xib */; };
@@ -43,6 +43,11 @@
 		79B9909F2849054D00173C9E /* ShiftDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B9909E2849054D00173C9E /* ShiftDetailsViewController.swift */; };
 		79B990A328490BEF00173C9E /* OrganisationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B990A228490BEF00173C9E /* OrganisationModel.swift */; };
 		79B990A5284914F800173C9E /* ShiftCreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B990A4284914F800173C9E /* ShiftCreateModel.swift */; };
+		79B990AD284940C900173C9E /* ShiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B990AB284940C900173C9E /* ShiftTableViewCell.swift */; };
+		79B990AE284940C900173C9E /* ShiftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B990AC284940C900173C9E /* ShiftTableViewCell.xib */; };
+		79B990B02849429300173C9E /* ShiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B990AF2849429300173C9E /* ShiftModel.swift */; };
+		79B990B22849431200173C9E /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B990B12849431200173C9E /* TaskModel.swift */; };
+		79B990B42849480200173C9E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B990B32849480200173C9E /* Date.swift */; };
 		79CCCFA62829902B00C44D41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA52829902B00C44D41 /* AppDelegate.swift */; };
 		79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA72829902B00C44D41 /* SceneDelegate.swift */; };
 		79CCCFAA2829902B00C44D41 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCFA92829902B00C44D41 /* WelcomeViewController.swift */; };
@@ -73,7 +78,7 @@
 		7968059E2845687A00BAD979 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		796805A228456EF200BAD979 /* ShiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftsViewController.swift; sourceTree = "<group>"; };
 		796805A42845800200BAD979 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
-		796805AF2845812E00BAD979 /* OrganisationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationUser.swift; sourceTree = "<group>"; };
+		796805AF2845812E00BAD979 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		796805B32845822000BAD979 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		796805B6284697C900BAD979 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		796805B7284697C900BAD979 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
@@ -93,6 +98,11 @@
 		79B9909E2849054D00173C9E /* ShiftDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDetailsViewController.swift; sourceTree = "<group>"; };
 		79B990A228490BEF00173C9E /* OrganisationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationModel.swift; sourceTree = "<group>"; };
 		79B990A4284914F800173C9E /* ShiftCreateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftCreateModel.swift; sourceTree = "<group>"; };
+		79B990AB284940C900173C9E /* ShiftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTableViewCell.swift; sourceTree = "<group>"; };
+		79B990AC284940C900173C9E /* ShiftTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTableViewCell.xib; sourceTree = "<group>"; };
+		79B990AF2849429300173C9E /* ShiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftModel.swift; sourceTree = "<group>"; };
+		79B990B12849431200173C9E /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		79B990B32849480200173C9E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		79CCCFA22829902A00C44D41 /* Logotime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logotime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CCCFA52829902B00C44D41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CCCFA72829902B00C44D41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +142,7 @@
 		792D085C2847DF8F005E9699 /* Shifts */ = {
 			isa = PBXGroup;
 			children = (
+				79B990A62849343C00173C9E /* View */,
 				79B990972848149400173C9E /* Model */,
 				792D085D2847DFD9005E9699 /* Controller */,
 			);
@@ -251,7 +262,7 @@
 		796805B22845821100BAD979 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				796805AF2845812E00BAD979 /* OrganisationUser.swift */,
+				796805AF2845812E00BAD979 /* User.swift */,
 				796805B32845822000BAD979 /* UserRole.swift */,
 				796805C32846ABC700BAD979 /* MenuItemModel.swift */,
 				796805C62846B93B00BAD979 /* CreateUserRequest.swift */,
@@ -298,6 +309,8 @@
 			children = (
 				79B99098284814C600173C9E /* ShiftTimeModel.swift */,
 				79B990A4284914F800173C9E /* ShiftCreateModel.swift */,
+				79B990AF2849429300173C9E /* ShiftModel.swift */,
+				79B990B12849431200173C9E /* TaskModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,6 +331,15 @@
 				79B990A228490BEF00173C9E /* OrganisationModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		79B990A62849343C00173C9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79B990AB284940C900173C9E /* ShiftTableViewCell.swift */,
+				79B990AC284940C900173C9E /* ShiftTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		79CCCF992829902A00C44D41 = {
@@ -362,6 +384,7 @@
 		79CCCFB928299E5A00C44D41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				79B990B32849480200173C9E /* Date.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				796805B9284697C900BAD979 /* UserTableViewCell.xib in Resources */,
+				79B990AE284940C900173C9E /* ShiftTableViewCell.xib in Resources */,
 				79CCCFB22829902C00C44D41 /* LaunchScreen.storyboard in Resources */,
 				79CCCFAF2829902C00C44D41 /* Assets.xcassets in Resources */,
 				79CCCFAD2829902B00C44D41 /* Main.storyboard in Resources */,
@@ -524,8 +548,9 @@
 				795281E02835922C0068C810 /* OrganisationSize.swift in Sources */,
 				795281E22835935C0068C810 /* RuleCreationViewController.swift in Sources */,
 				792D084F28477495005E9699 /* UserDetailTableViewController.swift in Sources */,
+				79B990B42849480200173C9E /* Date.swift in Sources */,
 				79DE15CF28340B7400342C02 /* OwnerCreationViewController.swift in Sources */,
-				796805B02845812E00BAD979 /* OrganisationUser.swift in Sources */,
+				796805B02845812E00BAD979 /* User.swift in Sources */,
 				79B990A5284914F800173C9E /* ShiftCreateModel.swift in Sources */,
 				792D08612847E100005E9699 /* AddShiftViewController.swift in Sources */,
 				797648D42832623400E1847F /* OwnerCreationModel.swift in Sources */,
@@ -533,6 +558,8 @@
 				79B9909B2848DD4B00173C9E /* AssignShiftsViewController.swift in Sources */,
 				796805C22846A8A200BAD979 /* MenuHeaderTableViewCell.swift in Sources */,
 				79B99099284814C600173C9E /* ShiftTimeModel.swift in Sources */,
+				79B990B02849429300173C9E /* ShiftModel.swift in Sources */,
+				79B990B22849431200173C9E /* TaskModel.swift in Sources */,
 				79B3AA4F28398CCC002D9022 /* OrganisationRulesModel.swift in Sources */,
 				7968059F2845687A00BAD979 /* EmailValidation.swift in Sources */,
 				79DE15D128341BAB00342C02 /* OrganisationCreationViewController.swift in Sources */,
@@ -542,6 +569,7 @@
 				79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */,
 				796805A328456EF200BAD979 /* ShiftsViewController.swift in Sources */,
 				796805C72846B93B00BAD979 /* CreateUserRequest.swift in Sources */,
+				79B990AD284940C900173C9E /* ShiftTableViewCell.swift in Sources */,
 				7968059A2845631B00BAD979 /* TokenModel.swift in Sources */,
 				796805A52845800200BAD979 /* UsersTableViewController.swift in Sources */,
 				792D08592847ACB9005E9699 /* UpdateUserRequest.swift in Sources */,

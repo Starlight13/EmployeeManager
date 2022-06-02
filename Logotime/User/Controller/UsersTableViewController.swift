@@ -12,7 +12,7 @@ class UsersTableViewController: UITableViewController {
     
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
-    var userList = [OrganisationUser]()
+    var userList = [User]()
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -83,7 +83,7 @@ class UsersTableViewController: UITableViewController {
         ]
         AF.request(url, method: .get, headers: headers).validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
-            .responseDecodable(of: [OrganisationUser].self) { response in
+            .responseDecodable(of: [User].self) { response in
                 switch response.result {
                 case let .success(organisationUsers):
                     self.userList = organisationUsers

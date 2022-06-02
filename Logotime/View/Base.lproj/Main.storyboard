@@ -1669,10 +1669,110 @@
                     <view key="view" contentMode="scaleToFill" id="euk-lu-1Sw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="38k-0S-3AU">
+                                <rect key="frame" x="0.0" y="64" width="414" height="729"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wjp-MB-6iH">
+                                        <rect key="frame" x="102" y="0.0" width="210.5" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfu-ej-WG8">
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="31"/>
+                                                <color key="tintColor" name="PrimaryColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
+                                                    <backgroundConfiguration key="background" cornerRadius="10">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeWeekPressed:" destination="xyr-7e-Y5K" eventType="touchUpInside" id="sWk-WU-RyC"/>
+                                                    <action selector="prevWeekPressed:" destination="xyr-7e-Y5K" eventType="touchUpInside" id="USn-Bb-gnC"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateInterval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icG-qN-D4K">
+                                                <rect key="frame" x="56" y="0.0" width="98.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYU-Nd-F71">
+                                                <rect key="frame" x="174.5" y="0.0" width="36" height="31"/>
+                                                <color key="tintColor" name="Color"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system">
+                                                    <backgroundConfiguration key="background" cornerRadius="6">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeWeekPressed:" destination="xyr-7e-Y5K" eventType="touchUpInside" id="N9Y-zK-bJX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mKF-c1-zQz">
+                                        <rect key="frame" x="20" y="51" width="374" height="38"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDK-JM-54e">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="38"/>
+                                                <color key="tintColor" name="PrimaryColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Filter">
+                                                    <backgroundConfiguration key="background" cornerRadius="6">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="filterPressed:" destination="xyr-7e-Y5K" eventType="touchUpInside" id="boL-1e-QaU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPV-R0-YNB">
+                                                <rect key="frame" x="197" y="0.0" width="177" height="38"/>
+                                                <color key="tintColor" name="Color"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Clear filter">
+                                                    <backgroundConfiguration key="background" cornerRadius="6">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="clearFilterPressed:" destination="xyr-7e-Y5K" eventType="touchUpInside" id="FaS-kE-sR1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yLk-4D-jEh">
+                                        <rect key="frame" x="0.0" y="109" width="414" height="620"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mKF-c1-zQz" firstAttribute="leading" secondItem="38k-0S-3AU" secondAttribute="leading" constant="20" id="1Qg-2q-akS"/>
+                                    <constraint firstItem="wjp-MB-6iH" firstAttribute="centerX" secondItem="38k-0S-3AU" secondAttribute="centerX" id="F3G-aS-jvh"/>
+                                    <constraint firstAttribute="bottom" secondItem="yLk-4D-jEh" secondAttribute="bottom" id="NWD-zF-Rur"/>
+                                    <constraint firstAttribute="trailing" secondItem="yLk-4D-jEh" secondAttribute="trailing" id="toj-1n-DlW"/>
+                                    <constraint firstAttribute="trailing" secondItem="mKF-c1-zQz" secondAttribute="trailing" constant="20" id="v3S-fK-Dnh"/>
+                                    <constraint firstItem="yLk-4D-jEh" firstAttribute="leading" secondItem="38k-0S-3AU" secondAttribute="leading" id="xeE-8x-FYh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jw4-oR-czY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="38k-0S-3AU" firstAttribute="leading" secondItem="jw4-oR-czY" secondAttribute="leading" id="84v-32-ImY"/>
+                            <constraint firstItem="38k-0S-3AU" firstAttribute="top" secondItem="jw4-oR-czY" secondAttribute="top" constant="20" id="DCo-bP-gR4"/>
+                            <constraint firstItem="38k-0S-3AU" firstAttribute="bottom" secondItem="jw4-oR-czY" secondAttribute="bottom" constant="-20" id="t15-yk-1nH"/>
+                            <constraint firstItem="38k-0S-3AU" firstAttribute="trailing" secondItem="jw4-oR-czY" secondAttribute="trailing" id="xUe-VP-cj9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shifts" image="calendar" catalog="system" id="ceb-B7-wsj"/>
+                    <connections>
+                        <outlet property="dateIntervalLabel" destination="icG-qN-D4K" id="4Av-wv-DV4"/>
+                        <outlet property="tableView" destination="yLk-4D-jEh" id="dvF-YC-7Vl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xh6-MI-ZzL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

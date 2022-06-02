@@ -15,9 +15,9 @@ class AssignShiftsViewController: UIViewController {
     
     var shiftTimes: [ShiftTimeModel]?
     
-    var selectedUsers = [OrganisationUser]()
-    var users = [OrganisationUser]()
-    var filteredUsers = [OrganisationUser]()
+    var selectedUsers = [User]()
+    var users = [User]()
+    var filteredUsers = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class AssignShiftsViewController: UIViewController {
         ]
         AF.request(url, method: .get, headers: headers).validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
-            .responseDecodable(of: [OrganisationUser].self) { response in
+            .responseDecodable(of: [User].self) { response in
                 switch response.result {
                 case let .success(organisationUsers):
                     self.users = organisationUsers
@@ -111,7 +111,7 @@ extension AssignShiftsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.AssignShift.assignShiftCell) ?? UITableViewCell()
-        var user: OrganisationUser
+        var user: User
         
         if indexPath.section == 0 {
             cell.selectionStyle = .none

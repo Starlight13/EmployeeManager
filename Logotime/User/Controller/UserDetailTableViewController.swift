@@ -14,7 +14,7 @@ extension StringProtocol {
 
 class UserDetailTableViewController: UITableViewController {
     
-    var user: OrganisationUser?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
