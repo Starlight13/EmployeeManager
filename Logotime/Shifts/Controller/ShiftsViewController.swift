@@ -26,7 +26,9 @@ class ShiftsViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: K.reusableCells.ShiftsTable.shiftCellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCells.ShiftsTable.shiftCell)
         updateLabel()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         loadData(for: nil, unasigned: nil)
     }
     
@@ -118,12 +120,14 @@ extension ShiftsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cells")
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCells.ShiftsTable.shiftCell) as! ShiftTableViewCell
         let shift = shifts[indexPath.row]
-        let user = shift.user
+        if let user = shift.user {
+            cell.userNameLabel.text = "\(user.firstName) \(user.lastName)"
+        } else {
+            cell.userNameLabel.text = "Unassigned"
+        }
         
-        cell.userNameLabel.text = "\(user.firstName) \(user.lastName)"
         cell.taskLabel.text = {
             switch shift.tasks.count {
             case 0: return "No tasks"

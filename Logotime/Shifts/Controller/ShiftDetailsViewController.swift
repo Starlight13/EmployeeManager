@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ShiftDetailsViewController: UIViewController {
 
@@ -15,6 +16,8 @@ class ShiftDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var assigneeDetailsButton: UIButton!
+    @IBOutlet weak var applyButton: UIButton!
     
     var shift: ShiftModel?
     var hasAdminRights = false
@@ -46,7 +49,16 @@ class ShiftDetailsViewController: UIViewController {
         
         titleLabel.text = shift?.title
         descriptionLabel.text = shift?.description
-        userNameLabel.text = "\(shift?.user.firstName ?? "") \(shift?.user.lastName ?? "")"
+        if let user = shift?.user {
+            userNameLabel.text = "\(user.firstName) \(user.lastName)"
+            assigneeDetailsButton.isHidden = false
+            applyButton.isHidden = true
+            
+        } else {
+            userNameLabel.text = "Not assigned"
+            assigneeDetailsButton.isHidden = true
+            applyButton.isHidden = false
+        }
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -70,6 +82,24 @@ class ShiftDetailsViewController: UIViewController {
         }
     }
 
+    @IBAction func applyPressed(_ sender: UIButton) {
+        if let shift = shift, shift.user == nil {
+            let requestURL = "\(K.baseURL)\(K.Endpoints.shiftRequest)/\(shift.id)\(K.Endpoints.unassigned)"
+            let headers: HTTPHeaders = [.authorization(bearerToken: Token.token ?? "")]
+            
+            AF.request(requestURL, method: .post, headers: headers)
+                .validate()
+                .response { response in
+                    switch response.result {
+                    case .success:
+                        print("Applied")
+                        self.applyButton.isHidden = true
+                    case let .failure(error):
+                        print(error)
+                    }
+                }
+        }
+    }
 }
 
 extension ShiftDetailsViewController: UITableViewDataSource {

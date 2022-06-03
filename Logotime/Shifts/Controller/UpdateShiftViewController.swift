@@ -28,7 +28,9 @@ class UpdateShiftViewController: UIViewController {
         if let shift = shift {
             titleField.text = shift.title
             descriptionField.text = shift.description
-            assigneeButton.setTitle("\(shift.user.firstName) \(shift.user.lastName)", for: .normal)
+            if let user = shift.user {
+                assigneeButton.setTitle("\(user.firstName) \(user.lastName)", for: .normal)
+            }
             setDateTitleFor(button: startButton, date: shift.shiftStart)
             setDateTitleFor(button: endButton, date: shift.shiftFinish)
             let formatter = DateFormatter()
@@ -97,7 +99,8 @@ class UpdateShiftViewController: UIViewController {
                 present(alert, animated: true, completion: nil)
                 return
             }
-            var assigneeId = shift.user.id
+            
+            var assigneeId = shift.user?.id
             if let userId = userId {
                 assigneeId = userId
             }

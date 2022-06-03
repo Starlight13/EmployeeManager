@@ -13,7 +13,7 @@ struct ShiftModel: Decodable {
     var description: String
     var shiftStart: String
     var shiftFinish: String
-    var user: User
+    var user: User?
 
     var tasks: [TaskModel]
 }

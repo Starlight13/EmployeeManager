@@ -14,6 +14,7 @@ struct K {
         static let userRequest = "/user"
         static let shiftRequest = "/shift"
         static let taskRequest = "/task"
+        static let unassigned = "/unassigned"
     }
     struct Segues {
         static let userCreationToOrganisationCreation = "userToOrganisationRegistration"
