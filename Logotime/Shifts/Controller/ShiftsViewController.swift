@@ -39,6 +39,9 @@ class ShiftsViewController: UIViewController {
             let destinationVC = segue.destination as! ShiftDetailsViewController
             let selectedShift = shifts[tableView.indexPathForSelectedRow?.row ?? 0]
             destinationVC.shift = selectedShift
+        } else if segue.identifier == K.Segues.shiftsToFilter {
+            let destinationVC = segue.destination as! ShiftFilterViewController
+            destinationVC.delegate = self
         }
     }
     
@@ -65,15 +68,13 @@ class ShiftsViewController: UIViewController {
         }
     }
     
-    @IBAction func filterPressed(_ sender: UIButton) {
-    }
-    
     @IBAction func clearFilterPressed(_ sender: UIButton) {
+        loadData()
     }
     
     //MARK: - Load data
     
-    func loadData(for userId: UUID?, unasigned: Bool?) {
+    func loadData(for userId: UUID? = nil, unasigned: Bool? = nil) {
         if let startFormatted = startDate?.changeDateFormat(to: K.dateFormats.dateFormat),
            let endFormatted = endDate?.changeDateFormat(to: K.dateFormats.dateFormat) {
             let requestURL = "\(K.baseURL)\(K.Endpoints.shiftRequest)"
@@ -130,8 +131,8 @@ extension ShiftsViewController: UITableViewDataSource {
             default: return "\(shift.tasks.count) tasks"
             }
         }()
-        cell.startTimeLabel.text = shift.shiftStart.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.hourMinuteFormat)
-        cell.endTimeLabel.text = shift.shiftFinish.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.hourMinuteFormat)
+        cell.startTimeLabel.text = shift.shiftStart.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.userDateTime)
+        cell.endTimeLabel.text = shift.shiftFinish.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.userDateTime)
         return cell
     }
     
@@ -140,5 +141,15 @@ extension ShiftsViewController: UITableViewDataSource {
 extension ShiftsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: K.Segues.shiftToDetails, sender: self)
+    }
+}
+
+extension ShiftsViewController: FilterDelegate {
+    func filterApplied(userId: UUID?) {
+        if let userId = userId {
+            loadData(for: userId)
+        } else {
+            loadData(unasigned: true)
+        }
     }
 }

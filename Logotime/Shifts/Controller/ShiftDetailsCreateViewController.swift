@@ -24,6 +24,7 @@ class ShiftDetailsCreateViewController: UIViewController {
     @IBAction func createShiftsTapped(_ sender: UIButton) {
         if !titleField.text!.isEmpty &&
             !descriptionField.text!.isEmpty {
+            
             let requestURL = "\(K.baseURL)\(K.Endpoints.shiftRequest)"
             let parameters = ShiftCreateModel(userIds: asigneeIds ?? [], title: titleField.text!, description: descriptionField.text!, shifts: shiftTimes ?? [])
             let headers: HTTPHeaders = [.authorization(bearerToken: Token.token ?? "")]

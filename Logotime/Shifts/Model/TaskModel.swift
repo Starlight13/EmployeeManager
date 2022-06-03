@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct TaskModel: Decodable {
-    var id: UUID
+struct TaskModel: Codable {
+    var id: UUID?
     var title: String
     var description: String
-    var taskTime: String
+    var taskTime: String?
     var shiftId: UUID
 }

@@ -13,6 +13,7 @@ struct K {
         static let organisationRequest = "/organization"
         static let userRequest = "/user"
         static let shiftRequest = "/shift"
+        static let taskRequest = "/task"
     }
     struct Segues {
         static let userCreationToOrganisationCreation = "userToOrganisationRegistration"
@@ -25,6 +26,9 @@ struct K {
         static let addShiftToAssign = "addShiftToAssign"
         static let assignShiftToDetails = "assignShiftToDetails"
         static let shiftToDetails = "shiftToDetails"
+        static let shiftDetailsToUserDetails = "shiftDetailsToUserDetails"
+        static let shiftDetailsToCreateTask = "shiftDetailsToCreateTask"
+        static let shiftsToFilter = "shiftsToFilter"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"
@@ -45,6 +49,8 @@ struct K {
             static let shiftCell = "shiftCell"
             static let shiftCellNibName = "ShiftTableViewCell"
             static let taskCell = "taskCell"
+            static let taskCellNibName = "TaskTableViewCell"
+            static let addTaskCell = "addTaskCell"
         }
         struct UserDetailsTable {
             static let userDetailsNameCell = "userDetailsNameCell"
@@ -61,5 +67,6 @@ struct K {
         static let hourMinuteFormat = "HH:mm"
         static let dateFormat = "yyyy-MM-dd"
         static let dateNoYearFormat = "dd.MM"
+        static let userDateTime = "MMM d, HH:mm"
     }
 }
