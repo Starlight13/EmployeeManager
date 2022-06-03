@@ -26,6 +26,10 @@ class ShiftDetailsViewController: UIViewController {
             hasAdminRights = true
         }
         
+        if !hasAdminRights {
+            navigationItem.rightBarButtonItem = nil
+        }
+        
         if let shiftStartDay = shift?.shiftStart.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.dateNoYearFormat),
            let shiftEndDay = shift?.shiftFinish.changeDateFormat(fromFormat: K.dateFormats.serverFormatNoMs, toFormat: K.dateFormats.dateNoYearFormat) {
             if shiftStartDay == shiftEndDay {
@@ -59,6 +63,9 @@ class ShiftDetailsViewController: UIViewController {
             destinationVC.user = shift?.user
         } else if segue.identifier == K.Segues.shiftDetailsToCreateTask {
             let destinationVC = segue.destination as! CreateUpdateTaskViewController
+            destinationVC.shift = shift
+        } else if segue.identifier == K.Segues.shiftDetailsToEdit {
+            let destinationVC = segue.destination as! UpdateShiftViewController
             destinationVC.shift = shift
         }
     }

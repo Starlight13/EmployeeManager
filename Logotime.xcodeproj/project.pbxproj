@@ -37,6 +37,8 @@
 		797648D62832637500E1847F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797648D52832637500E1847F /* Constants.swift */; };
 		797A26DF284A2C71006FAA32 /* CreateUpdateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797A26DE284A2C71006FAA32 /* CreateUpdateTaskViewController.swift */; };
 		797A26E1284A6201006FAA32 /* ShiftFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797A26E0284A6201006FAA32 /* ShiftFilterViewController.swift */; };
+		797A26E3284A89A2006FAA32 /* UpdateShiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797A26E2284A89A2006FAA32 /* UpdateShiftViewController.swift */; };
+		797A26E5284A9673006FAA32 /* UpdateShiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797A26E4284A9673006FAA32 /* UpdateShiftModel.swift */; };
 		79B3AA4F28398CCC002D9022 /* OrganisationRulesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA4E28398CCC002D9022 /* OrganisationRulesModel.swift */; };
 		79B3AA5128398EA7002D9022 /* OrganisationRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */; };
 		79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3AA52283AD6F2002D9022 /* LoginModel.swift */; };
@@ -97,6 +99,8 @@
 		797648D52832637500E1847F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Logotime/Constants.swift; sourceTree = "<group>"; };
 		797A26DE284A2C71006FAA32 /* CreateUpdateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUpdateTaskViewController.swift; sourceTree = "<group>"; };
 		797A26E0284A6201006FAA32 /* ShiftFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftFilterViewController.swift; sourceTree = "<group>"; };
+		797A26E2284A89A2006FAA32 /* UpdateShiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateShiftViewController.swift; sourceTree = "<group>"; };
+		797A26E4284A9673006FAA32 /* UpdateShiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateShiftModel.swift; sourceTree = "<group>"; };
 		79B3AA4E28398CCC002D9022 /* OrganisationRulesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationRulesModel.swift; sourceTree = "<group>"; };
 		79B3AA5028398EA7002D9022 /* OrganisationRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationRegistrationModel.swift; sourceTree = "<group>"; };
 		79B3AA52283AD6F2002D9022 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				79B990B52849723700173C9E /* ShiftDetailsViewController.swift */,
 				797A26DE284A2C71006FAA32 /* CreateUpdateTaskViewController.swift */,
 				797A26E0284A6201006FAA32 /* ShiftFilterViewController.swift */,
+				797A26E2284A89A2006FAA32 /* UpdateShiftViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				79B990A4284914F800173C9E /* ShiftCreateModel.swift */,
 				79B990AF2849429300173C9E /* ShiftModel.swift */,
 				79B990B12849431200173C9E /* TaskModel.swift */,
+				797A26E4284A9673006FAA32 /* UpdateShiftModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				792D085728478D1E005E9699 /* UserDetailsTableViewCell.swift in Sources */,
 				79B3AA53283AD6F2002D9022 /* LoginModel.swift in Sources */,
 				796805B8284697C900BAD979 /* UserTableViewCell.swift in Sources */,
+				797A26E5284A9673006FAA32 /* UpdateShiftModel.swift in Sources */,
 				796805CA2846BD6D00BAD979 /* CreateUpdateUserViewController.swift in Sources */,
 				79CCCFBD28299EC800C44D41 /* LoginViewController.swift in Sources */,
 				79B3AA5128398EA7002D9022 /* OrganisationRegistrationModel.swift in Sources */,
@@ -586,6 +593,7 @@
 				796805B42845822000BAD979 /* UserRole.swift in Sources */,
 				79B9909F2849054D00173C9E /* ShiftDetailsCreateViewController.swift in Sources */,
 				79CCCFA82829902B00C44D41 /* SceneDelegate.swift in Sources */,
+				797A26E3284A89A2006FAA32 /* UpdateShiftViewController.swift in Sources */,
 				796805A328456EF200BAD979 /* ShiftsViewController.swift in Sources */,
 				796805C72846B93B00BAD979 /* CreateUserRequest.swift in Sources */,
 				79B990AD284940C900173C9E /* ShiftTableViewCell.swift in Sources */,

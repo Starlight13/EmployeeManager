@@ -83,6 +83,7 @@ class CreateUpdateTaskViewController: UIViewController {
                             switch response.result {
                             case .success :
                                 print("Success")
+                                self.navigationController?.popViewController(animated: true)
                             case let .failure(error):
                                 print(error)
                             }

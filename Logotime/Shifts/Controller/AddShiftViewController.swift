@@ -127,15 +127,6 @@ class AddShiftViewController: UIViewController {
 
 extension AddShiftViewController: KoyomiDelegate {
     func koyomi(_ koyomi: Koyomi, didSelect date: Date?, forItemAt indexPath: IndexPath) {
-//        let theCalendar = Calendar.current
-//        if let realDate = theCalendar.date(byAdding: .day, value: 1, to: date ?? Date()){
-//            if dates.contains(realDate) {
-//                dates.remove(realDate)
-//            } else {
-//                dates.insert(realDate)
-//            }
-//            print(dates)
-//        }
         if let date = date {
             if dates.contains(date) {
                 dates.remove(date)
@@ -149,13 +140,6 @@ extension AddShiftViewController: KoyomiDelegate {
     
     func koyomi(_ koyomi: Koyomi, currentDateString dateString: String) {
         currentDateLabel.text = dateString
-//        koyomi.select(dates: Array(dates).map({ date in
-//            let calendar = Calendar.current
-//            if let koyomiDate = calendar.date(byAdding: .day, value: -1, to: date) {
-//                return koyomiDate
-//            }
-//            return Date()
-//        }))
         koyomi.select(dates: Array(dates))
         koyomi.reloadData()
     }
