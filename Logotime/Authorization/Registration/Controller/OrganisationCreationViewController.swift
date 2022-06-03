@@ -32,7 +32,7 @@ class OrganisationCreationViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Segues.organisationCreationToRuleCreation {
-            let destinationVC = segue.destination as! RuleCreationViewController
+            let destinationVC = segue.destination as! CreateUpdateRuleViewController
             destinationVC.owner = owner
             destinationVC.organisationSize = organisationSize
             destinationVC.organisationName = organisationName

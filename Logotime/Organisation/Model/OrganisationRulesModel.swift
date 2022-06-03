@@ -12,6 +12,7 @@ struct OrganisationRulesModel: Codable {
     let swapShiftRule: SwapShiftRule
     let checkInRule: CheckInRule
     let notAssignedShiftRule: NotAssignedShiftRule
+    let maxEmployeeShiftApplication: Int?
 }
 
 enum SubstituteMeRule: String, Codable {

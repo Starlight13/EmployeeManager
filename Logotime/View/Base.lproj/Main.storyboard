@@ -703,7 +703,7 @@
         <!--Rules creation-->
         <scene sceneID="kVr-ve-6P7">
             <objects>
-                <viewController id="twe-br-hAM" customClass="RuleCreationViewController" customModule="Logotime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="twe-br-hAM" customClass="CreateUpdateRuleViewController" customModule="Logotime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RdC-ks-Uo4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -980,7 +980,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ab-Ak-fss">
-                                <rect key="frame" x="20" y="782" width="374" height="80"/>
+                                <rect key="frame" x="20" y="733" width="374" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="fdQ-gA-xVj"/>
                                 </constraints>
@@ -1026,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rD6-Mx-EuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4018.8405797101454" y="522.99107142857144"/>
+            <point key="canvasLocation" x="4955" y="1118"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Lks-12-yPT">
@@ -1037,6 +1037,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tTl-NW-krk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="XUd-Xh-aP8" kind="relationship" relationship="rootViewController" id="8Lb-Rd-T4J"/>
@@ -1139,6 +1142,7 @@
                     <navigationItem key="navigationItem" id="iJt-Fr-cEb"/>
                     <connections>
                         <segue destination="amD-ny-AOg" kind="show" identifier="menuToUsers" id="0Eb-Hx-54q"/>
+                        <segue destination="twe-br-hAM" kind="show" identifier="settingsToChangeRules" id="Dtm-Dg-ruB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7U-HB-Kjr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2605,6 +2609,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="SgN-ky-HRF"/>
         <segue reference="8OO-f5-3fD"/>
+        <segue reference="Dtm-Dg-ruB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="InputField" width="327" height="60"/>

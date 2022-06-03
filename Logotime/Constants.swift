@@ -29,6 +29,8 @@ struct K {
         static let shiftDetailsToUserDetails = "shiftDetailsToUserDetails"
         static let shiftDetailsToCreateTask = "shiftDetailsToCreateTask"
         static let shiftsToFilter = "shiftsToFilter"
+        static let settingsToSubmitions = "settingsToSubmitions"
+        static let settingsToChangeRules = "settingsToChangeRules"
     }
     struct Colors {
         static let primaryColor = "PrimaryColor"
